@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "src"
+  ],
+  "ext": "ts",
+  "ignore": [
+    "node_modules"
+  ],
+  "exec": "ts-node --esm --transpile-only --experimental-specifier-resolution=node src/index.ts"
+}
