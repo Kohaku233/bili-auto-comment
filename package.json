@@ -2,22 +2,17 @@
   "name": "bili-auto-comment",
   "version": "1.0.0",
   "description": "自动化在 B 站特定视频下发送特定评论",
-  "main": "video_search.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kohaku233/bili-auto-comment.git"
-  },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kohaku233/bili-auto-comment/issues"
-  },
   "homepage": "https://github.com/Kohaku233/bili-auto-comment#readme",
   "devDependencies": {
-    "axios": "^1.4.0"
+    "@types/node": "^20.1.0",
+    "axios": "^1.4.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   }
 }
