@@ -22,4 +22,4 @@
 
 B 站没有官方的公开 API 文档，但是有一些社区成员反向工程出了一些 API。需要注意的是，这些 API 可能会在未来的某个时间失效或更改，因此在使用时要小心。
 
-https://socialsisteryi.github.io/
+https://socialsisteryi.github.io/bilibili-API-collect/
