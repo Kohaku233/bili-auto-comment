@@ -1,40 +1,20 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios"
-import dotenv from "dotenv"
+import { getRequest } from "./request/axiosUtils"
 
-// 获取环境变量
-dotenv.config({ path: ".env.local" })
-const cookie = process.env.SESSDATA
-
-// 封装 axios
-const axiosInstance: AxiosInstance = axios.create({
-  headers: {
-    Cookie: cookie
-  }
-})
-async function request<T = any>(
-  config: AxiosRequestConfig
-): Promise<AxiosResponse<T>> {
-  return axiosInstance(config)
-}
-
-interface SearchResponse {
-  code?: number
-  message?: string
-  data?: SearchResponseData
-}
-interface SearchResponseData {
-  numResults?: number
-  page?: number
-  pageSize?: number
-}
 /* 搜索请求 */
 export const searchApi = async () => {
   try {
-    const res = await request<SearchResponse>({
-      url: "https://api.bilibili.com/x/web-interface/search/type",
-      method: "GET"
-    })
-    console.log(res.data)
-    return res.data
-  } catch (error) {}
+    const url = "https://api.bilibili.com/x/web-interface/search/type"
+    const params: SearchParams = {
+      search_type: "video",
+      keyword: "雫るる",
+      order: "pubdate"
+    }
+    const res = await getRequest<ApiResponse<SearchResponseData>>(url, params)
+    const data = res.data.data
+    console.log("++++++++++++++++++++++++")
+    console.log(data)
+    return data?.result
+  } catch (error) {
+    console.log("请求出现异常:", error)
+  }
 }
