@@ -11,8 +11,6 @@ export const searchApi = async () => {
     }
     const res = await getRequest<ApiResponse<SearchResponseData>>(url, params)
     const data = res.data.data
-    console.log("++++++++++++++++++++++++")
-    console.log(data)
     return data?.result
   } catch (error) {
     console.log("请求出现异常:", error)

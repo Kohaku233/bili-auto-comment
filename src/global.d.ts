@@ -22,6 +22,8 @@ interface Video {
   review: number
   /* 视频简介 */
   description: string
+  /* 播放 */
+  play: number
 }
 /* 综合排序：totalrank、最多点击：click、最新发布：pubdate、最多弹幕：dm */
 type orderType = "click" | "pubdate" | "stow" | "scores" | "dm"
