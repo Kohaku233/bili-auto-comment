@@ -13,6 +13,6 @@ export const searchApi = async () => {
     const data = res.data.data
     return data?.result
   } catch (error) {
-    console.log("请求出现异常:", error)
+    console.log("搜索请求出现异常:", error)
   }
 }
